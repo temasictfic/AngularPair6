@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CategoryListGroupComponent } from '../../features/categories/components/category-list-group/category-list-group.component';
 import { ProductCardListComponent } from '../../features/products/components/product-card-list/product-card-list.component';
@@ -6,8 +6,8 @@ import { CategoryListItem } from '../../features/categories/models/category-list
 import { ProductListItem } from '../../features/products/models/product-list-item';
 import { SharedModule } from '../../shared/shared.module';
 import { IfNotDirective } from '../../shared/directives/if-not.directive';
-import { CategoryTableListGroupComponent } from '../../features/categories/components/category-table-list-group/category-table-list-group.component';
 import { take } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -30,7 +30,7 @@ export class HomePageComponent implements OnInit {
   initialPageIndex: number | null = null;
   isOldUser: boolean = false;
 
-  constructor(private router: Router, private route: ActivatedRoute, private change:ChangeDetectorRef) {}
+  constructor(private router: Router, private route: ActivatedRoute, private change:ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit(): void {
     this.categoryIdFromRoute();
@@ -44,11 +44,12 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-detectNewUser() {
-  if (typeof localStorage !== 'undefined') {
-    let isOldUser = Boolean(localStorage.getItem('oldUser'));
+  detectNewUser() {
+    let isOldUser = Boolean(
+      this.document.defaultView?.localStorage?.getItem('oldUser')
+    );
     if (!isOldUser) {
-      localStorage.setItem('oldUser', 'true');
+      this.document.defaultView?.localStorage?.setItem('oldUser', 'true');
       return;
     }
     setTimeout(() => {
@@ -56,7 +57,7 @@ detectNewUser() {
       this.change.markForCheck();
     }, 5000);
   }
-}
+
   categoryIdFromRoute() {
     this.route.queryParams
       .subscribe((queryParams) => {
