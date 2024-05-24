@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { SharedModule } from '../../../shared/shared.module';
+import { Router, RouterLink } from '@angular/router';
+import { LoginFormComponent } from '../../../features/auth/components/login-form/login-form.component';
 
 @Component({
   standalone: true,
@@ -8,10 +8,18 @@ import { SharedModule } from '../../../shared/shared.module';
     // CommonModule,
     RouterLink,
     // BasicLayoutComponent
-    SharedModule
+    LoginFormComponent,
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginPageComponent { }
+export class LoginPageComponent {
+  now = new Date();
+
+  constructor(private router: Router) {}
+
+  onLoginSuccess() {
+    this.router.navigate(['/']);
+  }
+}
