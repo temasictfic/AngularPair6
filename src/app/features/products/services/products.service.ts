@@ -9,6 +9,7 @@ import { AddedProduct } from '../models/added-product';
 import { AddProduct } from '../models/add-product';
 import { EditProduct } from '../models/edit-product';
 import { EditedProduct } from '../models/edited-product';
+import { PaginatedList } from '../../../core/models/paginated-list';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
-  getList(filterByCategoryId: number | null): Observable<ProductListItem[]> {
+  getList(pageIndex:number, pageSize: number, filterByCategoryId: number | null): Observable<PaginatedList<ProductListItem>> {
     let queryParams: any = {};
     if (filterByCategoryId) {
       queryParams.categoryId = filterByCategoryId.toString();
@@ -30,9 +31,19 @@ export class ProductsService {
       })
       .pipe(
         // pipe: Bir veya daha fazla operatörü birbirine bağlar. Böylece Observable yapıların davranışını değiştirilebilir. https://rxjs.dev/api/operators/
-
         map((data) => {
-          for (const product of data) {
+          // temporary solution for pagination from frontend, should be done in backend
+          const paginatedList: PaginatedList<ProductListItem> = {
+            pageIndex: pageIndex,
+            pageSize: pageSize,
+            totalCount: data.length,
+            items: data.slice((pageIndex - 1) * pageSize, pageIndex * pageSize),
+          };
+          return paginatedList;
+        }),
+          
+        map((data) => {
+          for (const product of data.items) {
             product.imageUrl = 'https://via.placeholder.com/500';
           }
           return data;
@@ -40,7 +51,7 @@ export class ProductsService {
         })
       );
 
-    const subject = new Subject<ProductListItem[]>();
+/*     const subject = new Subject<ProductListItem[]>();
     // Subject: Veri akışını olduğunda, hata olduğunda ve tamamlandığında gözlemleyenlere haber veren bir yapıdır.
     // BehaviorSubject: Subject'in bir türüdür. Ancak, bir BehaviorSubject, abone olmadan önceki en son değeri saklar ve yeni abonelere bu değeri hemen gönderir.
 
@@ -61,7 +72,7 @@ export class ProductsService {
       },
     });
 
-    return subject.asObservable();
+    return subject.asObservable(); */
   }
 
   getById(id: number): Observable<ProductDetails> {
