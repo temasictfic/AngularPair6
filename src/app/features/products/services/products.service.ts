@@ -31,13 +31,14 @@ export class ProductsService {
       })
       .pipe(
         // pipe: Bir veya daha fazla operatörü birbirine bağlar. Böylece Observable yapıların davranışını değiştirilebilir. https://rxjs.dev/api/operators/
-        map((data) => {
+        map((response) => {
           // temporary solution for pagination from frontend, should be done in backend
           const paginatedList: PaginatedList<ProductListItem> = {
             pageIndex: pageIndex,
             pageSize: pageSize,
-            totalCount: data.length,
-            items: data.slice((pageIndex - 1) * pageSize, pageIndex * pageSize),
+            totalCount: response.length,
+            items: response.slice(pageIndex * pageSize,
+              pageIndex * pageSize + pageSize),
           };
           return paginatedList;
         }),

@@ -7,6 +7,7 @@ import { ProductListItem } from '../../features/products/models/product-list-ite
 import { SharedModule } from '../../shared/shared.module';
 import { IfNotDirective } from '../../shared/directives/if-not.directive';
 import { CategoryTableListGroupComponent } from '../../features/categories/components/category-table-list-group/category-table-list-group.component';
+import { take } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -24,15 +25,23 @@ import { CategoryTableListGroupComponent } from '../../features/categories/compo
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent implements OnInit {
-  seletectedCategoryId: number | null = null;
 
+  seletectedCategoryId: number | null = null;
+  initialPageIndex: number | null = null;
   isOldUser: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private change:ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.categoryIdFromRoute();
+    this.getProductInitialPageIndexFromRoute();
     this.detectNewUser();
+  }
+  getProductInitialPageIndexFromRoute() {
+    this.route.queryParams.pipe( take(1)).subscribe((queryParams) => {
+      const pageIndex: number = Number(queryParams['pageIndex']) || 0;
+      this.initialPageIndex = pageIndex;
+    });
   }
 
 detectNewUser() {
@@ -60,15 +69,31 @@ detectNewUser() {
   onChangeSelectCategory(event: { selectedCategory: CategoryListItem | null }) {
     this.seletectedCategoryId = event.selectedCategory?.id || null;
 
-    const queryParams = {
-      category: this.seletectedCategoryId,
-    };
-    this.router.navigate([], {
-      queryParams,
+    this.route.queryParams.pipe(take(1)).subscribe((queryParams) => {
+      const newQueryParams = { ...queryParams };
+      newQueryParams['category'] = this.seletectedCategoryId || undefined;
+      newQueryParams['pageIndex'] = undefined;
+
+      this.router.navigate([], {
+        queryParams: newQueryParams,
+      });
     });
   }
 
   onViewProduct(event: ProductListItem) {
     this.router.navigate(['products', event.id]); // localhost:4200/products/5
   }
+
+  onProductPageChange(productPageIndex: number) {
+    this.route.queryParams.pipe(take(1)).subscribe((queryParams) => {
+      const newQueryParams = { ...queryParams };
+      newQueryParams['pageIndex'] = productPageIndex || undefined;
+
+      this.router.navigate([], {
+        queryParams: newQueryParams,
+      });
+    });
+  }
+
+
 }
