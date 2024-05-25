@@ -1250,16 +1250,17 @@
       "name": "Chef Anton's Cajun Seasoning"
     },
     {
-      "id": 5,
-      "supplierId": 2,
+      "name": "Chef Anton's Gumbo Mix",
+      "imageUrl": "https://placehold.co/600x400",
       "categoryId": 2,
+      "supplierId": 2,
       "quantityPerUnit": "36 boxes",
       "unitPrice": 21.35,
       "unitsInStock": 0,
       "unitsOnOrder": 0,
       "reorderLevel": 0,
-      "discontinued": true,
-      "name": "Chef Anton's Gumbo Mix"
+      "discontinued": "true",
+      "id": 5
     },
     {
       "id": 6,
@@ -1406,16 +1407,17 @@
       "name": "Zaanse koeken"
     },
     {
-      "id": 48,
-      "supplierId": 22,
+      "name": "Chocolade",
+      "imageUrl": "https://placehold.co/600x400",
       "categoryId": 3,
+      "supplierId": 22,
       "quantityPerUnit": "10 pkgs.",
-      "unitPrice": 12.75,
+      "unitPrice": "$2.0",
       "unitsInStock": 15,
       "unitsOnOrder": 70,
       "reorderLevel": 25,
       "discontinued": false,
-      "name": "Chocolade"
+      "id": 48
     },
     {
       "id": 49,
@@ -1466,18 +1468,6 @@
       "name": "Tarte au sucre"
     },
     {
-      "id": 63,
-      "supplierId": 7,
-      "categoryId": 2,
-      "quantityPerUnit": "15 - 625 g jars",
-      "unitPrice": 43.9,
-      "unitsInStock": 24,
-      "unitsOnOrder": 0,
-      "reorderLevel": 5,
-      "discontinued": false,
-      "name": "Vegie-spread"
-    },
-    {
       "id": 65,
       "supplierId": 2,
       "categoryId": 2,
@@ -1502,28 +1492,17 @@
       "name": "Louisiana Hot Spiced Okra"
     },
     {
-      "id": 68,
-      "supplierId": 8,
+      "name": "Scottish Longbreads",
+      "imageUrl": "https://placehold.co/600x400",
       "categoryId": 3,
+      "supplierId": 8,
       "quantityPerUnit": "10 boxes x 8 pieces",
       "unitPrice": 12.5,
       "unitsInStock": 6,
       "unitsOnOrder": 10,
       "reorderLevel": 15,
       "discontinued": false,
-      "name": "Scottish Longbreads"
-    },
-    {
-      "id": 77,
-      "supplierId": 12,
-      "categoryId": 2,
-      "quantityPerUnit": "12 boxes",
-      "unitPrice": 13,
-      "unitsInStock": 32,
-      "unitsOnOrder": 0,
-      "reorderLevel": 15,
-      "discontinued": false,
-      "name": "Original Frankfurter grüne Soße"
+      "id": 68
     }
   ],
   "categories": [
@@ -1538,8 +1517,8 @@
       "id": 3
     },
     {
-      "name": "Potato",
-      "description": "lorem",
+      "name": "Potato3",
+      "description": "ghgh",
       "id": 4
     }
   ],
@@ -15231,27 +15210,11 @@
       "orderId": 10255
     },
     {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 12,
-      "discount": 0,
-      "id": 26,
-      "orderId": 10256
-    },
-    {
       "productId": 27,
       "unitPrice": 35.1,
       "quantity": 25,
       "discount": 0,
       "id": 28,
-      "orderId": 10257
-    },
-    {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 15,
-      "discount": 0,
-      "id": 29,
       "orderId": 10257
     },
     {
@@ -15317,14 +15280,6 @@
       "discount": 0,
       "id": 77,
       "orderId": 10277
-    },
-    {
-      "productId": 63,
-      "unitPrice": 35.1,
-      "quantity": 8,
-      "discount": 0,
-      "id": 81,
-      "orderId": 10278
     },
     {
       "productId": 44,
@@ -15415,14 +15370,6 @@
       "orderId": 10290
     },
     {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 10,
-      "discount": 0,
-      "id": 115,
-      "orderId": 10290
-    },
-    {
       "productId": 44,
       "unitPrice": 15.5,
       "quantity": 24,
@@ -15437,14 +15384,6 @@
       "discount": 0,
       "id": 119,
       "orderId": 10292
-    },
-    {
-      "productId": 63,
-      "unitPrice": 35.1,
-      "quantity": 5,
-      "discount": 0,
-      "id": 121,
-      "orderId": 10293
     },
     {
       "productId": 11,
@@ -15604,14 +15543,6 @@
       "quantity": 21,
       "discount": 0.15,
       "id": 199,
-      "orderId": 10324
-    },
-    {
-      "productId": 63,
-      "unitPrice": 35.1,
-      "quantity": 80,
-      "discount": 0.15,
-      "id": 200,
       "orderId": 10324
     },
     {
@@ -15839,27 +15770,11 @@
       "orderId": 10366
     },
     {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 5,
-      "discount": 0,
-      "id": 316,
-      "orderId": 10366
-    },
-    {
       "productId": 65,
       "unitPrice": 16.8,
       "quantity": 15,
       "discount": 0,
       "id": 319,
-      "orderId": 10367
-    },
-    {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 7,
-      "discount": 0,
-      "id": 320,
       "orderId": 10367
     },
     {
@@ -15877,14 +15792,6 @@
       "discount": 0.25,
       "id": 331,
       "orderId": 10372
-    },
-    {
-      "productId": 63,
-      "unitPrice": 35.1,
-      "quantity": 16,
-      "discount": 0.1,
-      "id": 346,
-      "orderId": 10379
     },
     {
       "productId": 65,
@@ -15975,14 +15882,6 @@
       "orderId": 10399
     },
     {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 14,
-      "discount": 0,
-      "id": 405,
-      "orderId": 10399
-    },
-    {
       "productId": 49,
       "unitPrice": 16,
       "quantity": 30,
@@ -15997,14 +15896,6 @@
       "discount": 0,
       "id": 411,
       "orderId": 10401
-    },
-    {
-      "productId": 63,
-      "unitPrice": 35.1,
-      "quantity": 65,
-      "discount": 0,
-      "id": 413,
-      "orderId": 10402
     },
     {
       "productId": 16,
@@ -16111,14 +16002,6 @@
       "orderId": 10417
     },
     {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 35,
-      "discount": 0,
-      "id": 453,
-      "orderId": 10417
-    },
-    {
       "productId": 47,
       "unitPrice": 7.6,
       "quantity": 55,
@@ -16151,14 +16034,6 @@
       "orderId": 10421
     },
     {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 10,
-      "discount": 0.15,
-      "id": 466,
-      "orderId": 10421
-    },
-    {
       "productId": 26,
       "unitPrice": 24.9,
       "quantity": 2,
@@ -16180,14 +16055,6 @@
       "quantity": 40,
       "discount": 0,
       "id": 480,
-      "orderId": 10429
-    },
-    {
-      "productId": 63,
-      "unitPrice": 35.1,
-      "quantity": 35,
-      "discount": 0.25,
-      "id": 481,
       "orderId": 10429
     },
     {
@@ -16340,14 +16207,6 @@
       "quantity": 28,
       "discount": 0.1,
       "id": 541,
-      "orderId": 10451
-    },
-    {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 55,
-      "discount": 0.1,
-      "id": 542,
       "orderId": 10451
     },
     {
@@ -16511,14 +16370,6 @@
       "orderId": 10481
     },
     {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 30,
-      "discount": 0.05,
-      "id": 624,
-      "orderId": 10483
-    },
-    {
       "productId": 21,
       "unitPrice": 8,
       "quantity": 14,
@@ -16583,14 +16434,6 @@
       "orderId": 10491
     },
     {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 7,
-      "discount": 0.15,
-      "id": 646,
-      "orderId": 10491
-    },
-    {
       "productId": 25,
       "unitPrice": 11.2,
       "quantity": 60,
@@ -16613,22 +16456,6 @@
       "discount": 0.1,
       "id": 650,
       "orderId": 10493
-    },
-    {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 5,
-      "discount": 0,
-      "id": 654,
-      "orderId": 10495
-    },
-    {
-      "productId": 77,
-      "unitPrice": 10.4,
-      "quantity": 25,
-      "discount": 0,
-      "id": 659,
-      "orderId": 10497
     },
     {
       "productId": 49,
@@ -16975,14 +16802,6 @@
       "orderId": 10554
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 10,
-      "discount": 0.05,
-      "id": 823,
-      "orderId": 10554
-    },
-    {
       "productId": 19,
       "unitPrice": 9.2,
       "quantity": 35,
@@ -17055,28 +16874,12 @@
       "orderId": 10574
     },
     {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 6,
-      "discount": 0,
-      "id": 878,
-      "orderId": 10575
-    },
-    {
       "productId": 44,
       "unitPrice": 19.45,
       "quantity": 21,
       "discount": 0,
       "id": 882,
       "orderId": 10576
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 18,
-      "discount": 0,
-      "id": 883,
-      "orderId": 10577
     },
     {
       "productId": 15,
@@ -17111,22 +16914,6 @@
       "orderId": 10587
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 20,
-      "discount": 0,
-      "id": 904,
-      "orderId": 10587
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 60,
-      "discount": 0.05,
-      "id": 909,
-      "orderId": 10590
-    },
-    {
       "productId": 15,
       "unitPrice": 15.5,
       "quantity": 25,
@@ -17159,14 +16946,6 @@
       "orderId": 10595
     },
     {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 24,
-      "discount": 0.2,
-      "id": 924,
-      "orderId": 10596
-    },
-    {
       "productId": 65,
       "unitPrice": 21.05,
       "quantity": 12,
@@ -17189,14 +16968,6 @@
       "discount": 0,
       "id": 931,
       "orderId": 10599
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 5,
-      "discount": 0.25,
-      "id": 936,
-      "orderId": 10602
     },
     {
       "productId": 49,
@@ -17423,14 +17194,6 @@
       "orderId": 10642
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 35,
-      "discount": 0.25,
-      "id": 1050,
-      "orderId": 10646
-    },
-    {
       "productId": 19,
       "unitPrice": 9.2,
       "quantity": 30,
@@ -17500,14 +17263,6 @@
       "quantity": 60,
       "discount": 0,
       "id": 1080,
-      "orderId": 10658
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 70,
-      "discount": 0.05,
-      "id": 1083,
       "orderId": 10658
     },
     {
@@ -17655,14 +17410,6 @@
       "orderId": 10686
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 30,
-      "discount": 0.25,
-      "id": 1161,
-      "orderId": 10690
-    },
-    {
       "productId": 44,
       "unitPrice": 19.45,
       "quantity": 24,
@@ -17677,14 +17424,6 @@
       "discount": 0,
       "id": 1165,
       "orderId": 10691
-    },
-    {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 20,
-      "discount": 0,
-      "id": 1167,
-      "orderId": 10692
     },
     {
       "productId": 19,
@@ -17943,14 +17682,6 @@
       "orderId": 10735
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 2,
-      "discount": 0.1,
-      "id": 1287,
-      "orderId": 10735
-    },
-    {
       "productId": 65,
       "unitPrice": 21.05,
       "quantity": 40,
@@ -17981,14 +17712,6 @@
       "discount": 0,
       "id": 1311,
       "orderId": 10746
-    },
-    {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 9,
-      "discount": 0,
-      "id": 1315,
-      "orderId": 10747
     },
     {
       "productId": 26,
@@ -18143,28 +17866,12 @@
       "orderId": 10779
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 15,
-      "discount": 0,
-      "id": 1398,
-      "orderId": 10780
-    },
-    {
       "productId": 19,
       "unitPrice": 9.2,
       "quantity": 50,
       "discount": 0.05,
       "id": 1415,
       "orderId": 10788
-    },
-    {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 30,
-      "discount": 0,
-      "id": 1417,
-      "orderId": 10789
     },
     {
       "productId": 68,
@@ -18287,14 +17994,6 @@
       "orderId": 10811
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 20,
-      "discount": 0,
-      "id": 1476,
-      "orderId": 10812
-    },
-    {
       "productId": 48,
       "unitPrice": 12.75,
       "quantity": 8,
@@ -18348,14 +18047,6 @@
       "quantity": 20,
       "discount": 0.1,
       "id": 1499,
-      "orderId": 10823
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 15,
-      "discount": 0.1,
-      "id": 1502,
       "orderId": 10823
     },
     {
@@ -18415,14 +18106,6 @@
       "orderId": 10832
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 2,
-      "discount": 0.2,
-      "id": 1535,
-      "orderId": 10835
-    },
-    {
       "productId": 47,
       "unitPrice": 9.5,
       "quantity": 40,
@@ -18437,14 +18120,6 @@
       "discount": 0.2,
       "id": 1550,
       "orderId": 10840
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 15,
-      "discount": 0,
-      "id": 1555,
-      "orderId": 10841
     },
     {
       "productId": 11,
@@ -18727,22 +18402,6 @@
       "orderId": 10884
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 25,
-      "discount": 0,
-      "id": 1671,
-      "orderId": 10885
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 40,
-      "discount": 0,
-      "id": 1673,
-      "orderId": 10886
-    },
-    {
       "productId": 25,
       "unitPrice": 14,
       "quantity": 5,
@@ -18887,14 +18546,6 @@
       "orderId": 10920
     },
     {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 40,
-      "discount": 0,
-      "id": 1748,
-      "orderId": 10921
-    },
-    {
       "productId": 11,
       "unitPrice": 21,
       "quantity": 2,
@@ -18932,14 +18583,6 @@
       "quantity": 60,
       "discount": 0,
       "id": 1768,
-      "orderId": 10929
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 15,
-      "discount": 0,
-      "id": 1770,
       "orderId": 10929
     },
     {
@@ -19029,14 +18672,6 @@
       "discount": 0.25,
       "id": 1808,
       "orderId": 10944
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 40,
-      "discount": 0,
-      "id": 1813,
-      "orderId": 10946
     },
     {
       "productId": 50,
@@ -19151,27 +18786,11 @@
       "orderId": 10973
     },
     {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 10,
-      "discount": 0,
-      "id": 1875,
-      "orderId": 10974
-    },
-    {
       "productId": 47,
       "unitPrice": 9.5,
       "quantity": 30,
       "discount": 0,
       "id": 1880,
-      "orderId": 10977
-    },
-    {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 20,
-      "discount": 0,
-      "id": 1882,
       "orderId": 10977
     },
     {
@@ -19196,14 +18815,6 @@
       "quantity": 30,
       "discount": 0,
       "id": 1889,
-      "orderId": 10979
-    },
-    {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 35,
-      "discount": 0,
-      "id": 1892,
       "orderId": 10979
     },
     {
@@ -19236,14 +18847,6 @@
       "quantity": 15,
       "discount": 0,
       "id": 1906,
-      "orderId": 10986
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 15,
-      "discount": 0,
-      "id": 1908,
       "orderId": 10986
     },
     {
@@ -19295,27 +18898,11 @@
       "orderId": 10998
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 21,
-      "discount": 0.05,
-      "id": 1940,
-      "orderId": 10999
-    },
-    {
       "productId": 4,
       "unitPrice": 22,
       "quantity": 25,
       "discount": 0.25,
       "id": 1941,
-      "orderId": 11000
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 30,
-      "discount": 0,
-      "id": 1943,
       "orderId": 11000
     },
     {
@@ -19341,14 +18928,6 @@
       "discount": 0,
       "id": 1980,
       "orderId": 11013
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 18,
-      "discount": 0,
-      "id": 1983,
-      "orderId": 11015
     },
     {
       "productId": 49,
@@ -19407,14 +18986,6 @@
       "orderId": 11027
     },
     {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 12,
-      "discount": 0,
-      "id": 2017,
-      "orderId": 11029
-    },
-    {
       "productId": 5,
       "unitPrice": 21.35,
       "quantity": 70,
@@ -19461,14 +19032,6 @@
       "discount": 0,
       "id": 2049,
       "orderId": 11040
-    },
-    {
-      "productId": 63,
-      "unitPrice": 43.9,
-      "quantity": 30,
-      "discount": 0,
-      "id": 2051,
-      "orderId": 11041
     },
     {
       "productId": 44,
@@ -19551,14 +19114,6 @@
       "orderId": 11058
     },
     {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 10,
-      "discount": 0,
-      "id": 2090,
-      "orderId": 11060
-    },
-    {
       "productId": 68,
       "unitPrice": 12.5,
       "quantity": 55,
@@ -19581,14 +19136,6 @@
       "discount": 0,
       "id": 2105,
       "orderId": 11066
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 28,
-      "discount": 0.15,
-      "id": 2108,
-      "orderId": 11068
     },
     {
       "productId": 16,
@@ -19668,14 +19215,6 @@
       "quantity": 1,
       "discount": 0.04,
       "id": 2142,
-      "orderId": 11077
-    },
-    {
-      "productId": 77,
-      "unitPrice": 13,
-      "quantity": 2,
-      "discount": 0,
-      "id": 2154,
       "orderId": 11077
     },
     {

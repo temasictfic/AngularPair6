@@ -1,7 +1,7 @@
 <form [formGroup]="formGroup" (submit)="onFormSubmit()">
     <div>
       <label>Name: </label>
-      <input type="text" formControlName="name"/>
+      <input type="text" appAppNoCharacterInput formControlName="name"/>
       <!-- ngModel: basit olarak bir girdi alanını bir state'e bağlayarak, değerin iki yönlü olarak atanmasını sağlar.  -->
     </div>
     <div>
@@ -9,5 +9,5 @@
       <textarea formControlName="description" ></textarea>
     </div>
   
-    <button type="submit">Edit</button>
+    <button appAppButton type="submit">Edit</button>
   </form>

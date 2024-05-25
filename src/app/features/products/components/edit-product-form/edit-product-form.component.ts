@@ -4,18 +4,20 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { ProductsService } from '../../services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EditProduct } from '../../models/edit-product';
+import { FormControlErrorMessagePipe } from '../../pipes/formControlErrors.pipe';
 
 @Component({
-  selector: 'app-edit-product-form',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule, 
-    ReactiveFormsModule,
-  ],
-  templateUrl: './edit-product-form.component.html',
-  styleUrl: './edit-product-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-edit-product-form',
+    standalone: true,
+    templateUrl: './edit-product-form.component.html',
+    styleUrl: './edit-product-form.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FormControlErrorMessagePipe
+    ]
 })
 export class EditProductFormComponent { 
   formGroup: FormGroup; 
@@ -27,7 +29,7 @@ export class EditProductFormComponent {
     private router: Router,
   ) {
     this.formGroup = this.formBuilder.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
       imageUrl: ['', [Validators.required]],
       categoryId: ['', [Validators.required]],
       supplierId: ['', [Validators.required]],

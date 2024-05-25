@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { FooterComponent } from '../footer/footer.component';
+import { SharedModule } from '../../shared.module';
 
 // Components: Angular tarafında görünüm ve işlev bakımından birer küçük parçacıklardır.
 @Component({
@@ -14,7 +13,7 @@ import { FooterComponent } from '../footer/footer.component';
   // Her component'in kendi import'ı olabilir.
   // Böylece her component kendi başına Angulara dahil olabilir.
   standalone: true,
-  imports: [CommonModule, NavbarComponent, FooterComponent],
+  imports: [CommonModule, SharedModule],
   // Import'larda bu componentte kullanmak adına Angular modüllerini sağlamış oluyoruz.
 
   templateUrl: './app.component.html', // HTML dosyası yolunu

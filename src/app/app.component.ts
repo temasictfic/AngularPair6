@@ -20,6 +20,7 @@ import { AuthService } from './features/auth/services/auth.service';
   styleUrl: './app.component.scss', // Stil dosya yolunu
 })
 export class AppComponent implements OnInit {
+  title: any;
   constructor(private authService:AuthService) {}
 
   ngOnInit(): void {

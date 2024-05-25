@@ -4,6 +4,8 @@ import { CategoriesService } from '../../services/categories.service';
 import { FormGroup, FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { EditCategory } from '../../models/edit-category';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AppButtonDirective } from '../../../../shared/directives/appButton.directive';
+import { AppNoCharacterInputDirective } from '../../../../shared/directives/appNoCharacterInput.directive';
 
 @Component({
   selector: 'app-edit-category-form',
@@ -12,6 +14,8 @@ import { ActivatedRoute, Router } from '@angular/router';
     CommonModule,
     FormsModule, 
     ReactiveFormsModule,
+    AppButtonDirective,
+    AppNoCharacterInputDirective
   ],
   templateUrl: './edit-category-form.component.html',
   styleUrl: './edit-category-form.component.scss',
@@ -56,7 +60,7 @@ export class EditCategoryFormComponent {
     this.categoriesService.edit(this.id, editCategory).subscribe({
       complete: () => {
         console.log('Category edited');
-        this.router.navigate(['/']);
+        this.router.navigate(['categories', 'table']);
       },
     });
   }

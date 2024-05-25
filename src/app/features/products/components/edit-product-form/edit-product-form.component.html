@@ -2,10 +2,11 @@
     <div>
         <label>Name: </label>
         <input type="text" formControlName="name" />
+        <div >{{ formGroup.get('name')?.value | formControlErrorMessage  }}</div>
     </div>
     <div>
         <label>Image URL: </label>
-        <input type="text" formControlName="imageUrl" />
+        <input type="text" formControlName="imageUrl" value="{{ formGroup.get('imageUrl')?.value | lowercase }}" />
     </div>
     <div>
         <label>Category ID: </label>
@@ -21,7 +22,7 @@
     </div>
     <div>
         <label>Unit Price: </label>
-        <input type="text" formControlName="unitPrice" />
+        <input type="text" formControlName="unitPrice" value="{{ formGroup.get('unitPrice')?.value.substring(1) | currency:'USD':'symbol':'1.2-2' }}" />
     </div>
     <div>
         <label>Units In Stock: </label>

@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetailComponent } from '../../../features/products/components/product-detail/product-detail.component';
-import { SharedModule } from '../../../shared/shared.module';
 
 @Component({
   selector: 'app-product-detail-page',
@@ -9,7 +8,6 @@ import { SharedModule } from '../../../shared/shared.module';
   imports: [
     // CommonModule,
     // BasicLayoutComponent,
-    SharedModule,
     ProductDetailComponent,
   ],
   templateUrl: './product-detail-page.component.html',
@@ -31,8 +29,8 @@ export class ProductDetailPageComponent implements OnInit {
 
       // false, 0, null, undefined, NaN, '' => false
       if (!productId) {
-        //this.router.navigate(['/']);
-        //throw new Error('Product ID is invalid.');
+        this.router.navigate(['/']);
+        throw new Error('Product ID is invalid.');
       }
 
       this.productId = productId;
