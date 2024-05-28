@@ -4,14 +4,20 @@ import { BasicLayoutComponent } from './components/basic-layout/basic-layout.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { LoadingComponent } from '../features/products/components/loading/loading.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { LoadingInterceptor } from './interceptor/loading.interceptor';
+
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent, BasicLayoutComponent],  // Bir component (template tarafında kullanılan Angular bileşenleri) standolone değilse declarations kısmında tanımlanmalıdır.
-  // declarations kısmında eklenen componentler, aynı yerde tanımlandıkları için, birbirlerini kullanabilirler.
-
-  imports: [CommonModule, RouterModule], // imports kısmında modül tanımlamaları yapılır.
-
-  exports: [BasicLayoutComponent] // declarations kısmında tanımlaan bileşenler başka bir modülde veya bir standolone componentte kullanacak isek, exports kısmına eklemek gerekiyor.
+    declarations: [NavbarComponent, FooterComponent, BasicLayoutComponent, LoadingComponent], // imports kısmında modül tanımlamaları yapılır.
+    exports: [BasicLayoutComponent, LoadingComponent] // declarations kısmında tanımlaan bileşenler başka bir modülde veya bir standolone componentte kullanacak isek, exports kısmına eklemek gerekiyor.
+    ,
+    imports: [CommonModule, RouterModule, HttpClientModule],
+    providers: [
+        // ...
+        { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+      ]
 })
 export class SharedModule {}
 // SharedModule'ı diğer modüllerde veya standolone componentlerde kullanabilmek için, imports kısmına eklemek gerekiyor.

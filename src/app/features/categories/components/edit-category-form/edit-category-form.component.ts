@@ -6,6 +6,7 @@ import { EditCategory } from '../../models/edit-category';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppButtonDirective } from '../../../../shared/directives/appButton.directive';
 import { AppNoCharacterInputDirective } from '../../../../shared/directives/appNoCharacterInput.directive';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-edit-category-form',
@@ -57,6 +58,9 @@ export class EditCategoryFormComponent {
       name: this.formGroup.value.name,
       description: this.formGroup.value.description,
     };
+    // Mark the form as pristine before the edit operation begins
+    this.formGroup.markAsPristine();
+    
     this.categoriesService.edit(this.id, editCategory).subscribe({
       complete: () => {
         console.log('Category edited');
@@ -73,4 +77,12 @@ export class EditCategoryFormComponent {
 
     this.editCategory();
   }
+  
+  canDeactivate(): Observable<boolean> | boolean {
+    if (this.formGroup.dirty) {
+      return confirm('You have unsaved changes! If you leave, your changes will be lost.');
+    }
+    return true;
+  }
+
 }

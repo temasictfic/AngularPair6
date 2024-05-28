@@ -16,6 +16,8 @@ import { ProductsService } from '../../services/products.service';
 import { VatPipe } from '../../pipes/vat.pipe';
 import { PaginationComponent } from '../../../../shared/components/pagination/pagination.component';
 import { PaginatedList } from '../../../../core/models/paginated-list';
+import { LoadingService } from '../../services/loading.service';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-product-card-list',
@@ -35,7 +37,8 @@ export class ProductCardListComponent implements OnInit, OnChanges {
 
   constructor(
     private productsService: ProductsService,
-    private change: ChangeDetectorRef
+    private change: ChangeDetectorRef,
+    private loadingService: LoadingService
   ) {}
 
   ngOnInit(): void {
@@ -53,19 +56,23 @@ export class ProductCardListComponent implements OnInit, OnChanges {
       this.getProductList(0, 12);
   }
 
-  getProductList(pageIndex: number, pageSize: number) {
-    this.productsService
-      .getList(pageIndex, pageSize, this.filterByCategoryId)
-      .subscribe({
-        next: (productList) => {
-          this.productList = productList;
-          this.change.markForCheck();
-        },
-        error: (error) => {
-          console.error('There was an error!', error);
-        },
-      });
-  }
+getProductList(pageIndex: number, pageSize: number) {
+  this.loadingService.show();
+  this.productsService
+    .getList(pageIndex, pageSize, this.filterByCategoryId)
+    .pipe(
+      finalize(() => this.loadingService.hide())
+    )
+    .subscribe({
+      next: (productList) => {
+        this.productList = productList;
+        this.change.markForCheck();
+      },
+      error: (error) => {
+        console.error('There was an error!', error);
+      },
+    });
+}
 
   onViewProduct(product: ProductListItem) {
     this.viewProduct.emit(product);

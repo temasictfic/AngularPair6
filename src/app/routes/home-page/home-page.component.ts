@@ -15,6 +15,7 @@ import { take } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import { TranslatePipe } from '../../core/pipe/translatePipe';
 import { AppWelcomeDirective } from '../../shared/directives/appWelcome.directive';
+import { LoadingService } from '../../features/products/services/loading.service';
 
 @Component({
   standalone: true,
@@ -39,19 +40,23 @@ export class HomePageComponent implements OnInit {
   get now() {
     return new Date();
   }
-
+  
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private change: ChangeDetectorRef,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private loadingService: LoadingService
   ) {}
 
-  ngOnInit(): void {
-    this.categoryIdFromRoute();
-    this.getProductInitialPageIndexFromRoute();
-    this.detectNewUser();
-  }
+ngOnInit(): void {
+  this.loadingService.show();
+  Promise.all([
+    this.categoryIdFromRoute(),
+    this.getProductInitialPageIndexFromRoute(),
+    this.detectNewUser()
+  ]).finally(() => this.loadingService.hide());
+}
 
   getProductInitialPageIndexFromRoute() {
     this.route.queryParams.pipe(take(1)).subscribe((queryParams) => {
